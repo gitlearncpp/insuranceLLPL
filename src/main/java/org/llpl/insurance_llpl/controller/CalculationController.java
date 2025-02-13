@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/calculations")
+@RequestMapping("/api/v1/calculations")
 @RequiredArgsConstructor
 public class CalculationController {
 

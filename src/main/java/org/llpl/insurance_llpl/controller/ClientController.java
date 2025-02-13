@@ -8,7 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/clients")
+@RequestMapping("/api//v1/client")
 @RequiredArgsConstructor
 public class ClientController {
     private final ClientService clientService;
