@@ -25,7 +25,7 @@ public class ClientService {
         client.setPostalCode(clientDTO.getPostalCode());
         client.setEmail(clientDTO.getEmail());
         client.setPhoneNumber(clientDTO.getPhoneNumber());
-        client.setAddress(clientDTO.getAddress());
+        client.setAddress(clientDTO.getAddress()); //ToDo poprawić dopisane dane
         client.setMarketingConsent(clientDTO.isMarketingConsent());
 
         Client savedClient = clientRepository.save(client);
@@ -41,7 +41,7 @@ public class ClientService {
         dto.setPostalCode(client.getPostalCode());
         dto.setEmail(client.getEmail());
         dto.setPhoneNumber(client.getPhoneNumber());
-        dto.setAddress(client.getAddress());
+        dto.setAddress(client.getAddress()); // ToDo - do poprawy
         dto.setMarketingConsent(client.isMarketingConsent());
         return dto;
     }

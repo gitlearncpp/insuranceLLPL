@@ -30,3 +30,4 @@ public class ClientDTO {
     private String address;
     private boolean marketingConsent;
 }
+// ToDo zweryfikować duplikujące się reguły i uzupełnić dane w DTO
