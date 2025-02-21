@@ -13,19 +13,48 @@ public class Property {
     private Long id;
 
     @Column(nullable = false)
-    private String address;
-
-    @Column(nullable = false)
     private String postalCode;
+
+    private String city;
+
+    private String street;
+
+    private String houseNumber;
+
+    private String apartmentNumber;
+
+    private String propertyType;
 
     @Column(nullable = false)
     private BigDecimal propertyValue;
+
+    private BigDecimal electronicValue;
+
+    private BigDecimal artValue;
+
+    private BigDecimal otherValue;
+
+    private boolean isCash;
+
+    private BigDecimal cashValue;
+
+    private boolean isRented;
+
+    private BigDecimal isGarage;
 
     @Column(nullable = false)
     private Double area;
 
     @Column(nullable = false)
     private Integer constructionYear;
+
+    private String constructionType;
+
+    private String roofType;
+
+    private String heatingType;
+
+
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)

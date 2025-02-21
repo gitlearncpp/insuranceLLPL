@@ -22,11 +22,20 @@ public class ClientService {
         client.setFirstName(clientDTO.getFirstName());
         client.setLastName(clientDTO.getLastName());
         client.setPesel(clientDTO.getPesel());
+        client.setBirthDate(clientDTO.getBirthDate());
         client.setPostalCode(clientDTO.getPostalCode());
         client.setEmail(clientDTO.getEmail());
         client.setPhoneNumber(clientDTO.getPhoneNumber());
-        client.setAddress(clientDTO.getAddress()); //ToDo poprawić dopisane dane
+        client.setStreet(clientDTO.getStreet());
+        client.setCity(clientDTO.getCity());
+        client.setCountry(clientDTO.getCountry());
+        client.setState(clientDTO.getState());
+        client.setHouseNumber(clientDTO.getHouseNumber());
+        client.setApartmentNumber(clientDTO.getApartmentNumber());
+        client.setGender(clientDTO.getGender());
+        client.setDeclaredGender(clientDTO.getDeclaredGender());
         client.setMarketingConsent(clientDTO.isMarketingConsent());
+        client.setEmailConsent(clientDTO.isEmailConsent());
 
         Client savedClient = clientRepository.save(client);
         return mapToDTO(savedClient);
@@ -38,10 +47,19 @@ public class ClientService {
         dto.setFirstName(client.getFirstName());
         dto.setLastName(client.getLastName());
         dto.setPesel(client.getPesel());
+        dto.setBirthDate(client.getBirthDate());
         dto.setPostalCode(client.getPostalCode());
+        dto.setCity(client.getCity());
+        dto.setCountry(client.getCountry());
+        dto.setState(client.getState());
+        dto.setStreet(client.getStreet());
+        dto.setHouseNumber(client.getHouseNumber());
+        dto.setApartmentNumber(client.getApartmentNumber());
+        dto.setGender(client.getGender());
+        dto.setDeclaredGender(client.getDeclaredGender());
+        dto.setEmailConsent(client.isEmailConsent());
         dto.setEmail(client.getEmail());
         dto.setPhoneNumber(client.getPhoneNumber());
-        dto.setAddress(client.getAddress()); // ToDo - do poprawy
         dto.setMarketingConsent(client.isMarketingConsent());
         return dto;
     }

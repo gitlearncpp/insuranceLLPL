@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import jakarta.validation.constraints.Pattern;
 
+// ToDo zweryfikować DTO i metody ewentualne
+
 @Data
 public class PropertyDTO {
     private Long id;

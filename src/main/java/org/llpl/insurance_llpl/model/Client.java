@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import java.util.List;
-import jakarta.validation.constraints.Pattern;
+
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
 
@@ -18,49 +18,50 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "First name is required")
-    @Size(min = 2, max = 20, message = "First name must be between 2 and 20 characters")
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String firstName;
 
-    @NotNull(message = "Last name is required")
-    @Size(min = 2, max = 20, message = "Last name must be between 2 and 20 characters")
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String lastName;
 
-    @NotNull(message = "PESEL is required")
-    @Pattern(regexp = "\\d{11}", message = "PESEL must be exactly 11 digits")
     @Column(nullable = false, unique = true)
     private String pesel;
 
-    @NotNull
-    @Pattern(regexp = "\\d{2}-\\d{3}", message = "Postal code must be in the format XX-XXX")
     @Column(nullable = false)
+    private String birthDate;
+
+    @Column(nullable = false)
+    @NotNull
     private String postalCode;
 
     @Email(message = "Invalid email")
     private String email;
 
-    @Pattern(regexp = "\\d{9}", message = "Phone number must be exactly 9 digits")
+    @Column(length = 9)
     private String phoneNumber;
 
-    @Size(min = 4, max = 20, message = "Street must be between 4 and 20 characters")
+    @Column(nullable = false)
     private String street;
 
-    @Size(min = 2, max = 20, message = "City must be between 2 and 20 characters")
+    @Column(length =50, nullable = false)
     private String city;
 
-    @Size(min = 2, max = 20, message = "Country must be between 2 and 20 characters")
+    @Column(nullable = false)
     private String country;
 
-    @Size(min = 4, max = 20, message = "State must be between 4 and 20 characters")
+    @Column(length = 20)
     private String state;
 
+    @Column(length = 51 )
     @Size(min = 1, max = 10, message = "House number must be between 1 and 10 characters")
     private String houseNumber;
 
     @Size(min = 1, max = 5, message = "Apartment number must be between 1 and 5 characters")
     private String apartmentNumber;
+
+    private String gender;
+    @Column(nullable = false)
+    private String declaredGender;
 
     @Column(nullable = false)
     private boolean marketingConsent;
