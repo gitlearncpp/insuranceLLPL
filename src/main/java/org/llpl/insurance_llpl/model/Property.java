@@ -15,14 +15,22 @@ public class Property {
     @Column(nullable = false)
     private String postalCode;
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
+    private String country;
+
+    @Column(nullable = false, length = 50)
     private String street;
 
+    @Column(length = 20, nullable = false)
     private String houseNumber;
 
+    @Column(length = 5, nullable = false)
     private String apartmentNumber;
 
+    @Column(nullable = false)
     private String propertyType;
 
     @Column(nullable = false)
@@ -30,17 +38,23 @@ public class Property {
 
     private BigDecimal electronicValue;
 
-    private BigDecimal artValue;
+    @Column(nullable = false)
+    private boolean isArt;
+
+    private BigDecimal artValue;                            // Only if isArt = true
 
     private BigDecimal otherValue;
 
+    @Column(nullable = false)
     private boolean isCash;
 
-    private BigDecimal cashValue;
+    private BigDecimal cashValue;                          // Only if isCash = true
 
+    @Column(nullable = false)
     private boolean isRented;
 
-    private BigDecimal isGarage;
+    @Column(nullable = false)
+    private boolean isGarage;
 
     @Column(nullable = false)
     private Double area;
@@ -48,11 +62,11 @@ public class Property {
     @Column(nullable = false)
     private Integer constructionYear;
 
-    private String constructionType;
+    private String constructionType;                        // House only
 
-    private String roofType;
+    private String roofType;                                // House only
 
-    private String heatingType;
+    private String heatingType;                             // House only
 
 
 
