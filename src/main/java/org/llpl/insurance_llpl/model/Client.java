@@ -27,7 +27,7 @@ public class Client {
     @Column(nullable = false, unique = true)
     private String pesel;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "birth_date")
     private String birthDate;
 
     @Column(nullable = false)

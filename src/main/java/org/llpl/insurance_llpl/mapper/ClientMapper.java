@@ -7,36 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClientMapper {
 
-    public ClientDTO toDTO(Client client) {
-        if (client == null) {
-            return null;
-        }
-        ClientDTO dto = new ClientDTO();
-        dto.setId(client.getId());
-        dto.setFirstName(client.getFirstName());
-        dto.setLastName(client.getLastName());
-        dto.setPesel(client.getPesel());
-        dto.setBirthDate(client.getBirthDate());
-        dto.setPostalCode(client.getPostalCode());
-        dto.setCity(client.getCity());
-        dto.setCountry(client.getCountry());
-        dto.setState(client.getState());
-        dto.setStreet(client.getStreet());
-        dto.setHouseNumber(client.getHouseNumber());
-        dto.setApartmentNumber(client.getApartmentNumber());
-        dto.setGender(client.getGender());
-        dto.setDeclaredGender(client.getDeclaredGender());
-        dto.setEmailConsent(client.isEmailConsent());
-        dto.setEmail(client.getEmail());
-        dto.setPhoneNumber(client.getPhoneNumber());
-        dto.setMarketingConsent(client.isMarketingConsent());
-        return dto;
-    }
-
     public Client toEntity(ClientDTO dto) {
-        if (dto == null) {
-            return null;
-        }
         Client client = new Client();
         client.setFirstName(dto.getFirstName());
         client.setLastName(dto.getLastName());
@@ -56,5 +27,28 @@ public class ClientMapper {
         client.setMarketingConsent(dto.isMarketingConsent());
         client.setEmailConsent(dto.isEmailConsent());
         return client;
+    }
+
+    public ClientDTO toDTO(Client entity) {
+        ClientDTO dto = new ClientDTO();
+        dto.setId(entity.getId());
+        dto.setFirstName(entity.getFirstName());
+        dto.setLastName(entity.getLastName());
+        dto.setPesel(entity.getPesel());
+        dto.setBirthDate(entity.getBirthDate());
+        dto.setPostalCode(entity.getPostalCode());
+        dto.setEmail(entity.getEmail());
+        dto.setPhoneNumber(entity.getPhoneNumber());
+        dto.setStreet(entity.getStreet());
+        dto.setCity(entity.getCity());
+        dto.setCountry(entity.getCountry());
+        dto.setState(entity.getState());
+        dto.setHouseNumber(entity.getHouseNumber());
+        dto.setApartmentNumber(entity.getApartmentNumber());
+        dto.setGender(entity.getGender());
+        dto.setDeclaredGender(entity.getDeclaredGender());
+        dto.setMarketingConsent(entity.isMarketingConsent());
+        dto.setEmailConsent(entity.isEmailConsent());
+        return dto;
     }
 }
